@@ -25,4 +25,15 @@ class UsersController < ApplicationController
 
     render plain: user.to_pleasant_string
   end
+
+  def update
+    id = params[:id]
+    password = params[:password]
+
+    user = User.find(id)
+    user.password = password
+    user.save!
+
+    render plain: "Password of user with id: #{id} has been updated"
+  end
 end
