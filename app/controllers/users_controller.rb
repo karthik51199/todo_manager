@@ -18,4 +18,11 @@ class UsersController < ApplicationController
 
     render plain: response_msg
   end
+
+  def show
+    id = params[:id]
+    user = User.find(id)
+
+    render plain: user.to_pleasant_string
+  end
 end
