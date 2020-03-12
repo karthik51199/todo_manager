@@ -36,4 +36,19 @@ class UsersController < ApplicationController
 
     render plain: "Password of user with id: #{id} has been updated"
   end
+
+  def check
+    email = params[:email]
+    password = params[:password]
+    flag = true
+
+    user = User.find_by(email: email)
+    flag = false if user == nil
+
+    if flag
+      flag = false if user.password != password
+    end
+
+    render plain: flag
+  end
 end
