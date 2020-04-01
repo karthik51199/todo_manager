@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Todo Management App</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="todo-app.css">
+</head>
+
+<body>
+    <main class="TodoPageMain">
+        <article>
+            <h1 class="TodoPage-title">My To-do List</h1>
+            <section class="AddTodo">
+                <input class="AddTodo-text" type="text" placeholder="What's next?">
+                <input class="AddTodo-date" type="date">
+                <input class="AddTodo-button" type="button" value="Add">
+            </section>
+            <section class="TodoSection">
+                <div class="TodoSectionTitle">
+                    <p class="TodoSectionTitle-text">Due Today</p>
+                    <p class="TodoSectionTitle-remainingCount">0/4</p>
+                </div>
+                <ul>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Submit Saas201 L-6</p>
+                            <p class="TodoItem-overdueLabel">Overdue</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Call Accountant</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="TodoSection">
+                <div class="TodoSectionTitle">
+                    <p class="TodoSectionTitle-text">Due Tomorrow</p>
+                    <p class="TodoSectionTitle-remainingCount">0/3</p>
+                </div>
+                <ul>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Refill Groceries</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="TodoSection">
+                <div class="TodoSectionTitle">
+                    <p class="TodoSectionTitle-text">Due Later</p>
+                    <p class="TodoSectionTitle-remainingCount">0/3</p>
+                </div>
+                <ul>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Watch Netflix</p>
+                            <p class="TodoDate">Mar 26</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Check GC</p>
+                            <p class="TodoDate">Mar 27</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Attend Live-Sessions</p>
+                            <p class="TodoDate">Mar 28</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
