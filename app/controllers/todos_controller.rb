@@ -18,8 +18,9 @@ class TodosController < ApplicationController
     completed = false
     new_todo = Todo.create!(todo_text: todo_text, due_date: due_date, completed: completed)
 
-    response_msg = "Hey,The id of the newly created todo is #{new_todo.id}"
-    render plain: response_msg
+    #response_msg = "Hey,The id of the newly created todo is #{new_todo.id}"
+    #render plain: response_msg
+    redirect_to todos_path
   end
 
   def update
