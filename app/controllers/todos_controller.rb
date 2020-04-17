@@ -31,6 +31,7 @@ class TodosController < ApplicationController
     todo.completed = completed
     todo.save!
 
-    render plain: "The completed status of todo is #{completed}"
+    #render plain: "The completed status of todo is #{completed}"
+    redirect_to todos_path
   end
 end

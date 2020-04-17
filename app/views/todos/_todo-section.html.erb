@@ -5,10 +5,12 @@
     </div>
     <ul>
         <% todos.each do |todo| %>
-          <li class = "TodoItem">
+            <li class = "TodoItem">
                 <div class = "TodoItem-Container">
-                    <% checked = (todo.completed)? "checked":"" %>
-                    <input class = "TodoItem-checkbox" type = "checkbox" <%= checked %> >
+                    <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
+                        <% checked = (todo.completed)? "checked":"" %>
+                        <input class = "TodoItem-checkbox" name  = "completed" type = "checkbox" onclick = "this.form.submit()" <%= checked %> >
+                    <% end %>
                     <% class_name = (todo.completed)? "TodoDetail-completed" : "TodoDetail" %>
                     <p class = <%= class_name %> > <%= todo.todo_text %></p>
                     <% if show_due_date %>
@@ -16,7 +18,7 @@
                     <% end %>
                     <img class = "TodoItem-delete" src = "TrashIcon.png">
                 </div>
-         </li>
+            </li>
         <% end %>
     </ul>
 </section>
