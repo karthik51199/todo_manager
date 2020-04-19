@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   def index
     render plain: User.order(:id).map { |user| user.to_pleasant_string }.join("\n")
   end
@@ -36,25 +34,5 @@ class UsersController < ApplicationController
     user.save!
 
     render plain: "Password of user with id: #{id} has been updated"
-  end
-
-  def check
-    email = params[:email]
-    password = params[:password]
-    flag = true
-
-    user = User.find_by(email: email)
-    flag = false if user == nil
-
-    if flag
-      flag = false if user.password != password
-    end
-
-    render plain: flag
-  end
-
-  def new
-    #render plain: "here u ll get a html page to submit"
-    render "new"
   end
 end

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get "/", to: "home#index"
   resources :todos
   resources :users
-  post "users/login", to: "users#check"
+  get "/signin/new", to: "sessions#new", as: :new_session
+  post "/signin", to: "sessions#create", as: :sessions
 end
