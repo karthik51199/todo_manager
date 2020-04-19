@@ -6,17 +6,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    name = params[:name]
+    first_name = params[:first_name]
+    last_name = params[:last_name]
     email = params[:email]
     password = params[:password]
 
-    user = User.create!(name: name, email: email, password: password)
+    user = User.create!(first_name: first_name, last_name: last_name, email: email, password: password)
     user.save!
 
-    id = user.id
-    response_msg = "The id of newly added user is #{id}"
-
-    render plain: response_msg
+    #id = user.id
+    #response_msg = "The id of newly added user is #{id}"
+    #render plain: response_msg
+    redirect_to "/"
   end
 
   def show
@@ -50,5 +51,10 @@ class UsersController < ApplicationController
     end
 
     render plain: flag
+  end
+
+  def new
+    #render plain: "here u ll get a html page to submit"
+    render "new"
   end
 end
