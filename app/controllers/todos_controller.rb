@@ -15,13 +15,16 @@ class TodosController < ApplicationController
 
   def create
     todo_text = params[:todo_text]
-    due_date = DateTime.parse(params[:due_date])
+    due_date = params[:due_date]
     completed = false
     user_id = current_user.id
-    new_todo = Todo.create!(todo_text: todo_text, due_date: due_date, completed: completed, user_id: user_id)
+    new_todo = Todo.new(todo_text: todo_text, due_date: due_date, completed: completed, user_id: user_id)
 
-    #response_msg = "Hey,The id of the newly created todo is #{new_todo.id}"
-    #render plain: response_msg
+    if new_todo.valid?
+      new_todo.save
+    else
+      flash[:error] = new_todo.errors.full_messages.join(", ")
+    end
     redirect_to todos_path
   end
 
