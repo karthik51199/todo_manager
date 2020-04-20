@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <% if @current_user %>
+      <p class = "UserHeader">
+        Welcome <%= @current_user.first_name %>!
+      </p>
+      <%= link_to "Sign out", "/signout" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
