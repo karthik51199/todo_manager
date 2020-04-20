@@ -18,10 +18,8 @@ class UsersController < ApplicationController
     user = User.create!(first_name: first_name, last_name: last_name, email: email, password: password)
     user.save!
 
-    #id = user.id
-    #response_msg = "The id of newly added user is #{id}"
-    #render plain: response_msg
-    redirect_to "/"
+    session[:current_user_id] = user.id
+    redirect_to todos_path
   end
 
   def show
